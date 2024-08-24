@@ -1,0 +1,610 @@
+{
+  "benchmark": "insurance_retrieval_v1",
+  "created_at": "2026-08-01T14:13:41+0800",
+  "dataset_path": "data\\evals\\insurance_retrieval_v1.jsonl",
+  "dataset_sha256": "538b284401d08782e7b641c39db89aecfdd4fa3bfa3dde9471f979863831a0eb",
+  "corpus_document_count": 346,
+  "query_count": 74,
+  "top_k": 4,
+  "protocol": "same corpus, same queries, cosine exact search; production-like BM25+RRF also reported",
+  "models": {
+    "local": {
+      "model_name": "paraphrase-multilingual-MiniLM-L12-v2",
+      "timing": {
+        "model_load_seconds": 7.661239399807528,
+        "document_embedding_seconds": 1.8934621000662446,
+        "query_latency_ms": {
+          "mean": 10.554794583947876,
+          "p50": 10.345150018110871,
+          "p95": 12.852794979698954
+        },
+        "embedding_dimension": 384,
+        "execution": "local_cpu_or_configured_torch_device"
+      },
+      "vector": {
+        "overall": {
+          "count": 74,
+          "hit_rate@4": 0.8783783783783784,
+          "recall@4": 0.8716216216216216,
+          "mrr@4": 0.7781531531531531,
+          "ndcg@4": 0.799270828367224
+        },
+        "critical": {
+          "count": 69,
+          "hit_rate@4": 0.8695652173913043,
+          "recall@4": 0.8623188405797102,
+          "mrr@4": 0.7620772946859904,
+          "ndcg@4": 0.7847252362199213
+        },
+        "by_category": {
+          "claim": {
+            "count": 3,
+            "hit_rate@4": 1.0,
+            "recall@4": 1.0,
+            "mrr@4": 1.0,
+            "ndcg@4": 1.0
+          },
+          "compliance": {
+            "count": 2,
+            "hit_rate@4": 1.0,
+            "recall@4": 0.75,
+            "mrr@4": 0.75,
+            "ndcg@4": 0.622038473168458
+          },
+          "definition": {
+            "count": 10,
+            "hit_rate@4": 1.0,
+            "recall@4": 1.0,
+            "mrr@4": 0.85,
+            "ndcg@4": 0.8892789260714373
+          },
+          "law": {
+            "count": 12,
+            "hit_rate@4": 0.5,
+            "recall@4": 0.5,
+            "mrr@4": 0.3541666666666667,
+            "ndcg@4": 0.39625272627184344
+          },
+          "pricing": {
+            "count": 1,
+            "hit_rate@4": 1.0,
+            "recall@4": 1.0,
+            "mrr@4": 1.0,
+            "ndcg@4": 1.0
+          },
+          "product": {
+            "count": 16,
+            "hit_rate@4": 1.0,
+            "recall@4": 1.0,
+            "mrr@4": 0.8489583333333334,
+            "ndcg@4": 0.8870335040760192
+          },
+          "underwriting": {
+            "count": 30,
+            "hit_rate@4": 0.9,
+            "recall@4": 0.9,
+            "mrr@4": 0.8583333333333333,
+            "ndcg@4": 0.8687202103881617
+          }
+        },
+        "by_difficulty": {
+          "easy": {
+            "count": 12,
+            "hit_rate@4": 0.6666666666666666,
+            "recall@4": 0.6666666666666666,
+            "mrr@4": 0.4861111111111111,
+            "ndcg@4": 0.5301127596788988
+          },
+          "hard": {
+            "count": 22,
+            "hit_rate@4": 0.8636363636363636,
+            "recall@4": 0.8409090909090909,
+            "mrr@4": 0.7727272727272727,
+            "ndcg@4": 0.7817892207771411
+          },
+          "medium": {
+            "count": 40,
+            "hit_rate@4": 0.95,
+            "recall@4": 0.95,
+            "mrr@4": 0.86875,
+            "ndcg@4": 0.8896331331482671
+          }
+        },
+        "failures": [
+          {
+            "id": "uw-002",
+            "category": "underwriting",
+            "difficulty": "medium",
+            "critical": true,
+            "hit": false,
+            "recall": 0.0,
+            "reciprocal_rank": 0.0,
+            "ndcg": 0.0,
+            "retrieved_doc_ids": [
+              "law:第一百四十二条",
+              "law:第一百四十条",
+              "rule:PREMIUM_05",
+              "rule:OBLIGATION_01"
+            ]
+          },
+          {
+            "id": "uw-003",
+            "category": "underwriting",
+            "difficulty": "hard",
+            "critical": true,
+            "hit": false,
+            "recall": 0.0,
+            "reciprocal_rank": 0.0,
+            "ndcg": 0.0,
+            "retrieved_doc_ids": [
+              "rule:PREMIUM_01",
+              "rule:OBLIGATION_01",
+              "rule:LIABILITY_01",
+              "law:第一百六十四条"
+            ]
+          },
+          {
+            "id": "uw-030",
+            "category": "underwriting",
+            "difficulty": "easy",
+            "critical": true,
+            "hit": false,
+            "recall": 0.0,
+            "reciprocal_rank": 0.0,
+            "ndcg": 0.0,
+            "retrieved_doc_ids": [
+              "rule:UNDERWRITING_02",
+              "rule:ELIGIBILITY_04",
+              "definition:disease_definition:多发性大动脉炎旁路移植术",
+              "rule:OBLIGATION_02"
+            ]
+          },
+          {
+            "id": "law-001",
+            "category": "law",
+            "difficulty": "hard",
+            "critical": true,
+            "hit": false,
+            "recall": 0.0,
+            "reciprocal_rank": 0.0,
+            "ndcg": 0.0,
+            "retrieved_doc_ids": [
+              "law:第一百三十九条",
+              "law:第一百一十六条",
+              "law:第九十七条",
+              "law:第二十九条"
+            ]
+          },
+          {
+            "id": "law-004",
+            "category": "law",
+            "difficulty": "easy",
+            "critical": true,
+            "hit": false,
+            "recall": 0.0,
+            "reciprocal_rank": 0.0,
+            "ndcg": 0.0,
+            "retrieved_doc_ids": [
+              "rule:PREMIUM_04",
+              "rule:PREMIUM_05",
+              "rule:PREMIUM_02",
+              "rule:OBLIGATION_01"
+            ]
+          },
+          {
+            "id": "law-005",
+            "category": "law",
+            "difficulty": "medium",
+            "critical": true,
+            "hit": false,
+            "recall": 0.0,
+            "reciprocal_rank": 0.0,
+            "ndcg": 0.0,
+            "retrieved_doc_ids": [
+              "rule:PREMIUM_01",
+              "rule:ELIGIBILITY_03",
+              "rule:PREMIUM_04",
+              "rule:PREMIUM_05"
+            ]
+          },
+          {
+            "id": "law-006",
+            "category": "law",
+            "difficulty": "easy",
+            "critical": true,
+            "hit": false,
+            "recall": 0.0,
+            "reciprocal_rank": 0.0,
+            "ndcg": 0.0,
+            "retrieved_doc_ids": [
+              "rule:ELIGIBILITY_01",
+              "rule:ELIGIBILITY_02",
+              "rule:ELIGIBILITY_03",
+              "rule:PREMIUM_01"
+            ]
+          },
+          {
+            "id": "law-008",
+            "category": "law",
+            "difficulty": "hard",
+            "critical": true,
+            "hit": false,
+            "recall": 0.0,
+            "reciprocal_rank": 0.0,
+            "ndcg": 0.0,
+            "retrieved_doc_ids": [
+              "law:第一百七十一条",
+              "rule:PREMIUM_03",
+              "law:第一百五十三条",
+              "law:第一百二十条"
+            ]
+          },
+          {
+            "id": "law-011",
+            "category": "law",
+            "difficulty": "easy",
+            "critical": true,
+            "hit": false,
+            "recall": 0.0,
+            "reciprocal_rank": 0.0,
+            "ndcg": 0.0,
+            "retrieved_doc_ids": [
+              "rule:PREMIUM_02",
+              "rule:PREMIUM_06",
+              "rule:PREMIUM_05",
+              "law:第五十八条"
+            ]
+          }
+        ]
+      },
+      "hybrid_rrf": {
+        "overall": {
+          "count": 74,
+          "hit_rate@4": 0.9594594594594594,
+          "recall@4": 0.9459459459459459,
+          "mrr@4": 0.8671171171171171,
+          "ndcg@4": 0.8795438170806099
+        },
+        "critical": {
+          "count": 69,
+          "hit_rate@4": 0.9565217391304348,
+          "recall@4": 0.9420289855072463,
+          "mrr@4": 0.8574879227053139,
+          "ndcg@4": 0.8708151081734078
+        },
+        "by_category": {
+          "claim": {
+            "count": 3,
+            "hit_rate@4": 1.0,
+            "recall@4": 1.0,
+            "mrr@4": 1.0,
+            "ndcg@4": 1.0
+          },
+          "compliance": {
+            "count": 2,
+            "hit_rate@4": 1.0,
+            "recall@4": 0.75,
+            "mrr@4": 1.0,
+            "ndcg@4": 0.8065735963827292
+          },
+          "definition": {
+            "count": 10,
+            "hit_rate@4": 1.0,
+            "recall@4": 1.0,
+            "mrr@4": 0.9,
+            "ndcg@4": 0.9261859507142916
+          },
+          "law": {
+            "count": 12,
+            "hit_rate@4": 0.9166666666666666,
+            "recall@4": 0.875,
+            "mrr@4": 0.638888888888889,
+            "ndcg@4": 0.6780721839209406
+          },
+          "pricing": {
+            "count": 1,
+            "hit_rate@4": 1.0,
+            "recall@4": 1.0,
+            "mrr@4": 1.0,
+            "ndcg@4": 1.0
+          },
+          "product": {
+            "count": 16,
+            "hit_rate@4": 0.9375,
+            "recall@4": 0.9375,
+            "mrr@4": 0.90625,
+            "ndcg@4": 0.9094156589199778
+          },
+          "underwriting": {
+            "count": 30,
+            "hit_rate@4": 0.9666666666666667,
+            "recall@4": 0.9666666666666667,
+            "mrr@4": 0.9,
+            "ndcg@4": 0.9174573004761943
+          }
+        },
+        "by_difficulty": {
+          "easy": {
+            "count": 12,
+            "hit_rate@4": 0.8333333333333334,
+            "recall@4": 0.8333333333333334,
+            "mrr@4": 0.6527777777777778,
+            "ndcg@4": 0.6993991050595311
+          },
+          "hard": {
+            "count": 22,
+            "hit_rate@4": 1.0,
+            "recall@4": 0.9545454545454546,
+            "mrr@4": 0.9242424242424242,
+            "ndcg@4": 0.9049033946282736
+          },
+          "medium": {
+            "count": 40,
+            "hit_rate@4": 0.975,
+            "recall@4": 0.975,
+            "mrr@4": 0.9,
+            "ndcg@4": 0.9196394630357186
+          }
+        },
+        "failures": [
+          {
+            "id": "product-007",
+            "category": "product",
+            "difficulty": "easy",
+            "critical": true,
+            "hit": false,
+            "recall": 0.0,
+            "reciprocal_rank": 0.0,
+            "ndcg": 0.0,
+            "retrieved_doc_ids": [
+              "rule:PREMIUM_02",
+              "rule:PREMIUM_05",
+              "rule:OBLIGATION_02",
+              "rule:ELIGIBILITY_02"
+            ]
+          },
+          {
+            "id": "uw-002",
+            "category": "underwriting",
+            "difficulty": "medium",
+            "critical": true,
+            "hit": false,
+            "recall": 0.0,
+            "reciprocal_rank": 0.0,
+            "ndcg": 0.0,
+            "retrieved_doc_ids": [
+              "law:第一百四十二条",
+              "rule:UNDERWRITING_12",
+              "law:第一百四十条",
+              "rule:PREMIUM_05"
+            ]
+          },
+          {
+            "id": "law-004",
+            "category": "law",
+            "difficulty": "easy",
+            "critical": true,
+            "hit": false,
+            "recall": 0.0,
+            "reciprocal_rank": 0.0,
+            "ndcg": 0.0,
+            "retrieved_doc_ids": [
+              "rule:PREMIUM_04",
+              "law:第七十六条",
+              "rule:PREMIUM_05",
+              "law:第七十一条"
+            ]
+          }
+        ]
+      },
+      "exact_search_latency_ms": {
+        "mean": 0.42490540324030696,
+        "p50": 0.39424991700798273,
+        "p95": 0.593974906951189
+      }
+    },
+    "qwen": {
+      "model_name": "qwen3.7-text-embedding",
+      "timing": {
+        "model_load_seconds": 0.0,
+        "document_embedding_seconds": 12.422989200102165,
+        "query_latency_ms": {
+          "mean": 198.15741620668388,
+          "p50": 195.73415000922978,
+          "p95": 233.10678004054344
+        },
+        "embedding_dimension": 1024,
+        "execution": "remote_api",
+        "document_batch_size": 20,
+        "base_url_host": "dashscope.aliyuncs.com"
+      },
+      "vector": {
+        "overall": {
+          "count": 74,
+          "hit_rate@4": 1.0,
+          "recall@4": 1.0,
+          "mrr@4": 0.9707207207207207,
+          "ndcg@4": 0.9782809359555995
+        },
+        "critical": {
+          "count": 69,
+          "hit_rate@4": 1.0,
+          "recall@4": 1.0,
+          "mrr@4": 0.9758454106280192,
+          "ndcg@4": 0.9820559348861292
+        },
+        "by_category": {
+          "claim": {
+            "count": 3,
+            "hit_rate@4": 1.0,
+            "recall@4": 1.0,
+            "mrr@4": 1.0,
+            "ndcg@4": 1.0
+          },
+          "compliance": {
+            "count": 2,
+            "hit_rate@4": 1.0,
+            "recall@4": 1.0,
+            "mrr@4": 1.0,
+            "ndcg@4": 1.0
+          },
+          "definition": {
+            "count": 10,
+            "hit_rate@4": 1.0,
+            "recall@4": 1.0,
+            "mrr@4": 1.0,
+            "ndcg@4": 1.0
+          },
+          "law": {
+            "count": 12,
+            "hit_rate@4": 1.0,
+            "recall@4": 1.0,
+            "mrr@4": 0.9583333333333334,
+            "ndcg@4": 0.9692441461309548
+          },
+          "pricing": {
+            "count": 1,
+            "hit_rate@4": 1.0,
+            "recall@4": 1.0,
+            "mrr@4": 1.0,
+            "ndcg@4": 1.0
+          },
+          "product": {
+            "count": 16,
+            "hit_rate@4": 1.0,
+            "recall@4": 1.0,
+            "mrr@4": 0.8958333333333334,
+            "ndcg@4": 0.9226162191964322
+          },
+          "underwriting": {
+            "count": 30,
+            "hit_rate@4": 1.0,
+            "recall@4": 1.0,
+            "mrr@4": 1.0,
+            "ndcg@4": 1.0
+          }
+        },
+        "by_difficulty": {
+          "easy": {
+            "count": 12,
+            "hit_rate@4": 1.0,
+            "recall@4": 1.0,
+            "mrr@4": 0.9583333333333334,
+            "ndcg@4": 0.9692441461309548
+          },
+          "hard": {
+            "count": 22,
+            "hit_rate@4": 1.0,
+            "recall@4": 1.0,
+            "mrr@4": 1.0,
+            "ndcg@4": 1.0
+          },
+          "medium": {
+            "count": 40,
+            "hit_rate@4": 1.0,
+            "recall@4": 1.0,
+            "mrr@4": 0.9583333333333334,
+            "ndcg@4": 0.9690464876785729
+          }
+        },
+        "failures": []
+      },
+      "hybrid_rrf": {
+        "overall": {
+          "count": 74,
+          "hit_rate@4": 1.0,
+          "recall@4": 1.0,
+          "mrr@4": 0.9504504504504504,
+          "ndcg@4": 0.9600640660658555
+        },
+        "critical": {
+          "count": 69,
+          "hit_rate@4": 1.0,
+          "recall@4": 1.0,
+          "mrr@4": 0.9468599033816425,
+          "ndcg@4": 0.9571701578097581
+        },
+        "by_category": {
+          "claim": {
+            "count": 3,
+            "hit_rate@4": 1.0,
+            "recall@4": 1.0,
+            "mrr@4": 1.0,
+            "ndcg@4": 1.0
+          },
+          "compliance": {
+            "count": 2,
+            "hit_rate@4": 1.0,
+            "recall@4": 1.0,
+            "mrr@4": 1.0,
+            "ndcg@4": 0.9598603945740938
+          },
+          "definition": {
+            "count": 10,
+            "hit_rate@4": 1.0,
+            "recall@4": 1.0,
+            "mrr@4": 0.95,
+            "ndcg@4": 0.9630929753571458
+          },
+          "law": {
+            "count": 12,
+            "hit_rate@4": 1.0,
+            "recall@4": 1.0,
+            "mrr@4": 0.9166666666666666,
+            "ndcg@4": 0.9317983580242585
+          },
+          "pricing": {
+            "count": 1,
+            "hit_rate@4": 1.0,
+            "recall@4": 1.0,
+            "mrr@4": 1.0,
+            "ndcg@4": 1.0
+          },
+          "product": {
+            "count": 16,
+            "hit_rate@4": 1.0,
+            "recall@4": 1.0,
+            "mrr@4": 0.8958333333333334,
+            "ndcg@4": 0.9175987685181939
+          },
+          "underwriting": {
+            "count": 30,
+            "hit_rate@4": 1.0,
+            "recall@4": 1.0,
+            "mrr@4": 0.9833333333333333,
+            "ndcg@4": 0.9876976584523819
+          }
+        },
+        "by_difficulty": {
+          "easy": {
+            "count": 12,
+            "hit_rate@4": 1.0,
+            "recall@4": 1.0,
+            "mrr@4": 0.875,
+            "ndcg@4": 0.9077324383928644
+          },
+          "hard": {
+            "count": 22,
+            "hit_rate@4": 1.0,
+            "recall@4": 1.0,
+            "mrr@4": 1.0,
+            "ndcg@4": 0.9890528348838438
+          },
+          "medium": {
+            "count": 40,
+            "hit_rate@4": 1.0,
+            "recall@4": 1.0,
+            "mrr@4": 0.9458333333333334,
+            "ndcg@4": 0.9598197315178594
+          }
+        },
+        "failures": []
+      },
+      "exact_search_latency_ms": {
+        "mean": 0.4390081000589841,
+        "p50": 0.4146000137552619,
+        "p95": 0.6170450011268257
+      }
+    }
+  }
+}
