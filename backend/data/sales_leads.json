@@ -1,0 +1,62 @@
+[
+  {
+    "persona_id": "hard_boss",
+    "customer_name": "王强",
+    "preferred_salutation": "王先生",
+    "age": 45,
+    "gender": "男",
+    "occupation": "企业经营者",
+    "lead_source": "客户基础登记信息",
+    "contact_context": "首次保险保障咨询，具体需求尚待了解"
+  },
+  {
+    "persona_id": "tech_savvy",
+    "customer_name": "李明",
+    "preferred_salutation": "李先生",
+    "age": 38,
+    "gender": "男",
+    "occupation": "IT公司技术总监",
+    "lead_source": "客户基础登记信息",
+    "contact_context": "首次保险保障咨询，具体需求尚待了解"
+  },
+  {
+    "persona_id": "young_mother",
+    "customer_name": "张婷",
+    "preferred_salutation": "张女士",
+    "age": 32,
+    "gender": "女",
+    "occupation": "全职照顾家庭",
+    "lead_source": "客户基础登记信息",
+    "contact_context": "首次保险保障咨询，具体需求尚待了解"
+  },
+  {
+    "persona_id": "eager_youth",
+    "customer_name": "陈飞",
+    "preferred_salutation": "陈先生",
+    "age": 24,
+    "gender": "男",
+    "occupation": "互联网开发工程师",
+    "lead_source": "客户基础登记信息",
+    "contact_context": "首次保险保障咨询，具体需求尚待了解"
+  },
+  {
+    "persona_id": "hidden_risk_client",
+    "customer_name": "赵阔",
+    "preferred_salutation": "赵女士",
+    "age": 52,
+    "gender": "女",
+    "occupation": "个体经营者",
+    "lead_source": "客户基础登记信息",
+    "contact_context": "首次保险保障咨询，具体需求尚待了解"
+  },
+  {
+    "persona_id": "rebate_seeker",
+    "customer_name": "孙大强",
+    "preferred_salutation": "孙先生",
+    "age": 48,
+    "gender": "男",
+    "occupation": "个体经营者",
+    "lead_source": "客户基础登记信息",
+    "contact_context": "首次保险保障咨询，具体需求尚待了解"
+  }
+]
